@@ -1,4 +1,5 @@
 import os
+import gc
 import time
 import timeit
 from typing import Dict
@@ -44,6 +45,7 @@ def main():
 	print("===================")
 	HELLO_ITERS = 100000
 	for name, decodefn in decoders.items():
+		gc.collect() # give each impl a "clean slate", for maximum fairness
 		res = timeit.timeit(lambda: decodefn(testcases["trivial_helloworld.dagcbor"]), number=HELLO_ITERS)
 		ns_per_it = (res / HELLO_ITERS) * 1000 * 1000 * 1000
 		print(f"{name:<9}: {ns_per_it:.0f} ns")
@@ -53,6 +55,7 @@ def main():
 	print("===================")
 	HELLO_ITERS = 100000
 	for name, encodefn in encoders.items():
+		gc.collect() # give each impl a "clean slate", for maximum fairness
 		decoded = decoders[name](testcases["trivial_helloworld.dagcbor"])
 		res = timeit.timeit(lambda: encodefn(decoded), number=HELLO_ITERS)
 		ns_per_it = (res / HELLO_ITERS) * 1000 * 1000 * 1000
@@ -66,6 +69,7 @@ def main():
 		if testname.startswith("torture_") or testname.startswith("trivial_"):
 			continue
 		for decodername, decodefn in decoders.items():
+			gc.collect() # give each impl a "clean slate", for maximum fairness
 			res = timeit.timeit(lambda: decodefn(testcase), number=REALISTIC_ITERS)
 			res /= REALISTIC_ITERS
 			ms_per_it = res * 1000
@@ -80,6 +84,7 @@ def main():
 		if testname.startswith("torture_") or testname.startswith("trivial_"):
 			continue
 		for encodername, encodefn in encoders.items():
+			gc.collect() # give each impl a "clean slate", for maximum fairness
 			decoded = decoders[encodername](testcase)
 			res = timeit.timeit(lambda: encodefn(decoded), number=REALISTIC_ITERS)
 			res /= REALISTIC_ITERS
@@ -94,8 +99,8 @@ def main():
 		if not testname.startswith("torture_"):
 			continue
 		for decodername, decodefn in decoders.items():
+			gc.collect() # give each impl a "clean slate", for maximum fairness (not sure if this even matters with multiprocessing but it can't hurt)
 			q = Queue()
-
 			p = Process(target=run_and_except, args=(testcase,q,decodefn,))
 			start = time.time()
 			p.start()
