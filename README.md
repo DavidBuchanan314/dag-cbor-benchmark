@@ -64,11 +64,11 @@ twitter.json.dagcbor           dag_cbor : 18.94 ms (20.28 MB/s)
 
 Realistic Encode Tests:
 =======================
-canada.json.dagcbor            dag_cbor : 0.91 ms (1109.95 MB/s)
+canada.json.dagcbor            cbrrr    : 0.91 ms (1109.95 MB/s)
 canada.json.dagcbor            dag_cbor : 232.15 ms (4.34 MB/s)
-citm_catalog.json.dagcbor      dag_cbor : 1.38 ms (236.92 MB/s)
+citm_catalog.json.dagcbor      cbrrr    : 1.38 ms (236.92 MB/s)
 citm_catalog.json.dagcbor      dag_cbor : 64.69 ms (5.05 MB/s)
-twitter.json.dagcbor           dag_cbor : 0.63 ms (605.39 MB/s)
+twitter.json.dagcbor           cbrrr    : 0.63 ms (605.39 MB/s)
 twitter.json.dagcbor           dag_cbor : 24.99 ms (15.37 MB/s)
 
 Decode Torture Tests:

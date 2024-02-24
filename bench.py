@@ -75,7 +75,7 @@ for testname, testcase in testcases.items():
 		res /= REALISTIC_ITERS
 		ms_per_it = res * 1000
 		mbps = len(testcase)/1024/1024/res
-		print(f"{testname:<30} {decodername:<9}: {ms_per_it:.2f} ms ({mbps:.2f} MB/s)")
+		print(f"{testname:<30} {encodername:<9}: {ms_per_it:.2f} ms ({mbps:.2f} MB/s)")
 
 print()
 print("Decode Torture Tests:")
