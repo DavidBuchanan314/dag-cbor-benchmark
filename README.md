@@ -34,54 +34,54 @@ Resutlts of `bench.py`, on Python 3.12.1, Fedora 39, 2021 M1 Pro MBP
 
 Contestants:
 
-- [DavidBuchanan314/dag-cbrrr](https://github.com/DavidBuchanan314/dag-cbrrr) (commit c6cff1dfe26c5937cd1c8a5b90b1e5973a90dbd3)
-- [MarshalX/python-libipld](https://github.com/MarshalX/python-libipld) (["fix-perf" branch](https://github.com/MarshalX/python-libipld/pull/4), commit bc8d081c39f1f9c9c3436f6d7d926ac1202ed319 ) (Decode only)
+- [DavidBuchanan314/dag-cbrrr](https://github.com/DavidBuchanan314/dag-cbrrr) (release v0.0.1)
+- [MarshalX/python-libipld](https://github.com/MarshalX/python-libipld) (release v1.1.1) (Decode only)
 - [hashberg-io/dag-cbor](https://github.com/hashberg-io/dag-cbor) (release v0.3.3)
 
 ```
 Hello World Decode:
 ===================
-cbrrr    : 205 ns
-libipld  : 127 ns
-dag_cbor : 4274 ns
+cbrrr    : 211 ns
+libipld  : 131 ns
+dag_cbor : 4270 ns
 
 Hello World Encode:
 ===================
-cbrrr    : 134 ns
-dag_cbor : 5284 ns
+cbrrr    : 136 ns
+dag_cbor : 5180 ns
 
 Realistic Decode Tests:
 =======================
-canada.json.dagcbor            cbrrr    : 3.83 ms (262.76 MB/s)
-canada.json.dagcbor            libipld  : 9.75 ms (103.30 MB/s)
-canada.json.dagcbor            dag_cbor : 111.43 ms (9.04 MB/s)
-citm_catalog.json.dagcbor      cbrrr    : 2.44 ms (133.56 MB/s)
-citm_catalog.json.dagcbor      libipld  : 7.04 ms (46.38 MB/s)
-citm_catalog.json.dagcbor      dag_cbor : 47.70 ms (6.85 MB/s)
-twitter.json.dagcbor           cbrrr    : 1.33 ms (288.03 MB/s)
-twitter.json.dagcbor           libipld  : 3.50 ms (109.83 MB/s)
-twitter.json.dagcbor           dag_cbor : 19.26 ms (19.95 MB/s)
+canada.json.dagcbor            cbrrr    : 3.89 ms (258.64 MB/s)
+canada.json.dagcbor            libipld  : 9.69 ms (104.00 MB/s)
+canada.json.dagcbor            dag_cbor : 110.79 ms (9.09 MB/s)
+citm_catalog.json.dagcbor      cbrrr    : 2.46 ms (132.49 MB/s)
+citm_catalog.json.dagcbor      libipld  : 7.09 ms (46.03 MB/s)
+citm_catalog.json.dagcbor      dag_cbor : 47.39 ms (6.89 MB/s)
+twitter.json.dagcbor           cbrrr    : 1.41 ms (272.57 MB/s)
+twitter.json.dagcbor           libipld  : 3.41 ms (112.50 MB/s)
+twitter.json.dagcbor           dag_cbor : 19.81 ms (19.39 MB/s)
 
 Realistic Encode Tests:
 =======================
-canada.json.dagcbor            cbrrr    : 0.86 ms (1169.91 MB/s)
-canada.json.dagcbor            dag_cbor : 227.10 ms (4.44 MB/s)
-citm_catalog.json.dagcbor      cbrrr    : 1.33 ms (245.83 MB/s)
-citm_catalog.json.dagcbor      dag_cbor : 64.46 ms (5.06 MB/s)
-twitter.json.dagcbor           cbrrr    : 0.64 ms (599.85 MB/s)
-twitter.json.dagcbor           dag_cbor : 24.63 ms (15.60 MB/s)
+canada.json.dagcbor            cbrrr    : 0.89 ms (1131.48 MB/s)
+canada.json.dagcbor            dag_cbor : 231.86 ms (4.34 MB/s)
+citm_catalog.json.dagcbor      cbrrr    : 1.35 ms (241.93 MB/s)
+citm_catalog.json.dagcbor      dag_cbor : 64.86 ms (5.03 MB/s)
+twitter.json.dagcbor           cbrrr    : 0.63 ms (609.05 MB/s)
+twitter.json.dagcbor           dag_cbor : 24.77 ms (15.51 MB/s)
 
 Decode Torture Tests:
 =====================
-torture_nested_lists.dagcbor   cbrrr     770.8 ms (12.37 MB/s)
+torture_nested_lists.dagcbor   cbrrr     770.4 ms (12.38 MB/s)
 torture_nested_lists.dagcbor   libipld   SEGFAULT
 torture_nested_lists.dagcbor   dag_cbor  ERROR: maximum recursion depth exceeded
-torture_nested_maps.dagcbor    cbrrr     1230.9 ms (15.50 MB/s)
+torture_nested_maps.dagcbor    cbrrr     1279.7 ms (14.90 MB/s)
 torture_nested_maps.dagcbor    libipld   SEGFAULT
 torture_nested_maps.dagcbor    dag_cbor  ERROR: maximum recursion depth exceeded
-torture_cids.dagcbor           cbrrr     40.1 ms (97.42 MB/s)
-torture_cids.dagcbor           libipld   36.0 ms (108.67 MB/s)
-torture_cids.dagcbor           dag_cbor  7404.3 ms (0.53 MB/s)
+torture_cids.dagcbor           cbrrr     30.7 ms (127.17 MB/s)
+torture_cids.dagcbor           libipld   36.6 ms (106.76 MB/s)
+torture_cids.dagcbor           dag_cbor  7359.7 ms (0.53 MB/s)
 ```
 
 Note: "maximum recursion depth exceeded" is an acceptable result for the recursion torture tests - a segfault isn't though :P
