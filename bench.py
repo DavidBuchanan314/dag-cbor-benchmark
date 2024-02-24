@@ -9,7 +9,7 @@ import cbrrr     # https://github.com/DavidBuchanan314/dag-cbrrr
 import libipld   # https://github.com/MarshalX/python-libipld
 import dag_cbor  # https://github.com/hashberg-io/dag-cbor
 
-def run_and_except(testcase, q):
+def run_and_except(testcase, q, decodefn):
 	try:
 		decodefn(testcase)
 		q.put("success")
@@ -96,7 +96,7 @@ def main():
 		for decodername, decodefn in decoders.items():
 			q = Queue()
 
-			p = Process(target=run_and_except, args=(testcase,q,))
+			p = Process(target=run_and_except, args=(testcase,q,decodefn,))
 			start = time.time()
 			p.start()
 			p.join()
