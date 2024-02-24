@@ -36,7 +36,7 @@ def main():
 
 	testcases: Dict[str, bytes] = {}
 
-	for testcase in os.listdir(DATA_DIR):
+	for testcase in sorted(os.listdir(DATA_DIR)):
 		data = open(DATA_DIR + testcase, "rb").read()
 		testcases[testcase] = data
 
