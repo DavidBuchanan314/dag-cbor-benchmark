@@ -83,3 +83,5 @@ torture_cids.dagcbor           cbrrr     40.4 ms (96.67 MB/s)
 torture_cids.dagcbor           libipld   68.5 ms (57.08 MB/s)
 torture_cids.dagcbor           dag_cbor  7399.3 ms (0.53 MB/s)
 ```
+
+Node: "maximum recursion depth exceeded" is an acceptable result for the recursion torture tests - a segfault isn't though :P

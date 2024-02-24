@@ -11,12 +11,14 @@ import dag_cbor  # https://github.com/hashberg-io/dag-cbor
 
 decoders = {
 	"cbrrr": cbrrr.decode_dag_cbor,
+	"cbrrr_atjson": lambda x: cbrrr.decode_dag_cbor(x, True),
 	"libipld": libipld.decode_dag_cbor,
 	"dag_cbor": dag_cbor.decode,
 }
 
 encoders = {
 	"cbrrr": cbrrr.encode_dag_cbor,
+	"cbrrr_atjson": lambda x: cbrrr.encode_dag_cbor(x, True),
 	# libipld does not support encoding
 	"dag_cbor": dag_cbor.encode,
 }
