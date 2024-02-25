@@ -28,7 +28,7 @@ def main():
 	encoders = {
 		"cbrrr": cbrrr.encode_dag_cbor,
 		#"cbrrr_atjson": lambda x: cbrrr.encode_dag_cbor(x, True),
-		# libipld does not support encoding
+		"libipld": libipld.encode_dag_cbor,
 		"dag_cbor": dag_cbor.encode,
 	}
 
