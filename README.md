@@ -35,55 +35,55 @@ Resutlts of `bench.py`, on Python 3.12.1, Fedora 39, 2021 M1 Pro MBP
 Contestants:
 
 - [DavidBuchanan314/dag-cbrrr](https://github.com/DavidBuchanan314/dag-cbrrr) (release v0.0.1)
-- [MarshalX/python-libipld](https://github.com/MarshalX/python-libipld) (release v1.2.1)
+- [MarshalX/python-libipld](https://github.com/MarshalX/python-libipld) (release v1.2.2)
 - [hashberg-io/dag-cbor](https://github.com/hashberg-io/dag-cbor) (release v0.3.3)
 
 ```
 Hello World Decode:
 ===================
-cbrrr    : 273 ns
-libipld  : 175 ns
-dag_cbor : 4214 ns
+cbrrr    : 208 ns
+libipld  : 149 ns
+dag_cbor : 4408 ns
 
 Hello World Encode:
 ===================
-cbrrr    : 162 ns
-libipld  : 150 ns
-dag_cbor : 5052 ns
+cbrrr    : 137 ns
+libipld  : 136 ns
+dag_cbor : 5164 ns
 
 Realistic Decode Tests:
 =======================
-canada.json.dagcbor            cbrrr    : 3.81 ms (264.31 MB/s)
-canada.json.dagcbor            libipld  : 5.81 ms (173.32 MB/s)
-canada.json.dagcbor            dag_cbor : 111.47 ms (9.04 MB/s)
-citm_catalog.json.dagcbor      cbrrr    : 2.35 ms (138.79 MB/s)
-citm_catalog.json.dagcbor      libipld  : 3.68 ms (88.71 MB/s)
-citm_catalog.json.dagcbor      dag_cbor : 48.06 ms (6.79 MB/s)
-twitter.json.dagcbor           cbrrr    : 1.37 ms (280.97 MB/s)
-twitter.json.dagcbor           libipld  : 2.04 ms (187.95 MB/s)
-twitter.json.dagcbor           dag_cbor : 20.21 ms (19.01 MB/s)
+canada.json.dagcbor            cbrrr    : 3.99 ms (252.65 MB/s)
+canada.json.dagcbor            libipld  : 5.97 ms (168.67 MB/s)
+canada.json.dagcbor            dag_cbor : 109.49 ms (9.20 MB/s)
+citm_catalog.json.dagcbor      cbrrr    : 2.48 ms (131.63 MB/s)
+citm_catalog.json.dagcbor      libipld  : 4.03 ms (80.99 MB/s)
+citm_catalog.json.dagcbor      dag_cbor : 47.18 ms (6.92 MB/s)
+twitter.json.dagcbor           cbrrr    : 1.40 ms (274.81 MB/s)
+twitter.json.dagcbor           libipld  : 2.27 ms (169.52 MB/s)
+twitter.json.dagcbor           dag_cbor : 19.82 ms (19.38 MB/s)
 
 Realistic Encode Tests:
 =======================
-canada.json.dagcbor            cbrrr    : 0.80 ms (1256.85 MB/s)
-canada.json.dagcbor            libipld  : 1.66 ms (606.11 MB/s)
-canada.json.dagcbor            dag_cbor : 228.18 ms (4.41 MB/s)
-citm_catalog.json.dagcbor      cbrrr    : 1.36 ms (240.84 MB/s)
-citm_catalog.json.dagcbor      libipld  : 3.22 ms (101.55 MB/s)
-citm_catalog.json.dagcbor      dag_cbor : 65.17 ms (5.01 MB/s)
-twitter.json.dagcbor           cbrrr    : 0.61 ms (630.62 MB/s)
-twitter.json.dagcbor           libipld  : 1.55 ms (247.37 MB/s)
-twitter.json.dagcbor           dag_cbor : 24.85 ms (15.46 MB/s)
+canada.json.dagcbor            cbrrr    : 0.88 ms (1138.76 MB/s)
+canada.json.dagcbor            libipld  : 1.78 ms (566.43 MB/s)
+canada.json.dagcbor            dag_cbor : 231.38 ms (4.35 MB/s)
+citm_catalog.json.dagcbor      cbrrr    : 1.38 ms (237.35 MB/s)
+citm_catalog.json.dagcbor      libipld  : 2.31 ms (141.30 MB/s)
+citm_catalog.json.dagcbor      dag_cbor : 65.75 ms (4.97 MB/s)
+twitter.json.dagcbor           cbrrr    : 0.63 ms (607.27 MB/s)
+twitter.json.dagcbor           libipld  : 0.87 ms (439.38 MB/s)
+twitter.json.dagcbor           dag_cbor : 25.18 ms (15.26 MB/s)
 
 Decode Torture Tests:
 =====================
-torture_cids.dagcbor           cbrrr     32.2 ms (121.47 MB/s)
-torture_cids.dagcbor           libipld   32.9 ms (118.94 MB/s)
-torture_cids.dagcbor           dag_cbor  7135.1 ms (0.55 MB/s)
-torture_nested_lists.dagcbor   cbrrr     747.7 ms (12.75 MB/s)
+torture_cids.dagcbor           cbrrr     31.6 ms (123.87 MB/s)
+torture_cids.dagcbor           libipld   28.4 ms (137.66 MB/s)
+torture_cids.dagcbor           dag_cbor  7419.9 ms (0.53 MB/s)
+torture_nested_lists.dagcbor   cbrrr     771.0 ms (12.37 MB/s)
 torture_nested_lists.dagcbor   libipld   SEGFAULT
 torture_nested_lists.dagcbor   dag_cbor  ERROR: maximum recursion depth exceeded
-torture_nested_maps.dagcbor    cbrrr     1219.0 ms (15.65 MB/s)
+torture_nested_maps.dagcbor    cbrrr     1244.3 ms (15.33 MB/s)
 torture_nested_maps.dagcbor    libipld   SEGFAULT
 torture_nested_maps.dagcbor    dag_cbor  ERROR: maximum recursion depth exceeded
 ```
