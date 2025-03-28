@@ -30,64 +30,61 @@ TODO: include CAR test cases
 
 ## Python shootout:
 
-Resutlts of `bench.py`, on Python 3.12.1, Fedora 39, 2021 M1 Pro MBP
+Resutlts of `bench.py`, on Python 3.12.9, Fedora 40, 2021 M1 Pro MBP
 
 Contestants:
 
-- [DavidBuchanan314/dag-cbrrr](https://github.com/DavidBuchanan314/dag-cbrrr) (release v1.0.0)
-- [MarshalX/python-libipld](https://github.com/MarshalX/python-libipld) (release v2.0.0)
+- [DavidBuchanan314/dag-cbrrr](https://github.com/DavidBuchanan314/dag-cbrrr) (release v1.0.1)
+- [MarshalX/python-libipld](https://github.com/MarshalX/python-libipld) (release v3.0.1)
 - [hashberg-io/dag-cbor](https://github.com/hashberg-io/dag-cbor) (release v0.3.3)
 
 ```
 Hello World Decode:
 ===================
-cbrrr    : 264 ns
-libipld  : 130 ns
-dag_cbor : 4239 ns
+cbrrr    : 193 ns
+libipld  : 122 ns
+dag_cbor : 3936 ns
 
 Hello World Encode:
 ===================
-cbrrr    : 133 ns
-libipld  : 98 ns
-dag_cbor : 5086 ns
+cbrrr    : 124 ns
+libipld  : 109 ns
+dag_cbor : 4564 ns
 
 Realistic Decode Tests:
 =======================
-canada.json.dagcbor            cbrrr    : 3.96 ms (254.65 MB/s)
-canada.json.dagcbor            libipld  : 4.15 ms (242.86 MB/s)
-canada.json.dagcbor            dag_cbor : 108.44 ms (9.29 MB/s)
-citm_catalog.json.dagcbor      cbrrr    : 2.44 ms (133.67 MB/s)
-citm_catalog.json.dagcbor      libipld  : 3.06 ms (106.64 MB/s)
-citm_catalog.json.dagcbor      dag_cbor : 46.36 ms (7.04 MB/s)
-twitter.json.dagcbor           cbrrr    : 1.38 ms (277.45 MB/s)
-twitter.json.dagcbor           libipld  : 1.75 ms (219.49 MB/s)
-twitter.json.dagcbor           dag_cbor : 19.38 ms (19.82 MB/s)
+canada.json.dagcbor            cbrrr    : 3.87 ms (259.96 MB/s)
+canada.json.dagcbor            libipld  : 4.26 ms (236.40 MB/s)
+canada.json.dagcbor            dag_cbor : 100.44 ms (10.03 MB/s)
+citm_catalog.json.dagcbor      cbrrr    : 2.41 ms (135.31 MB/s)
+citm_catalog.json.dagcbor      libipld  : 2.97 ms (109.81 MB/s)
+citm_catalog.json.dagcbor      dag_cbor : 43.82 ms (7.45 MB/s)
+twitter.json.dagcbor           cbrrr    : 1.37 ms (279.79 MB/s)
+twitter.json.dagcbor           libipld  : 1.64 ms (234.64 MB/s)
+twitter.json.dagcbor           dag_cbor : 18.42 ms (20.85 MB/s)
 
 Realistic Encode Tests:
 =======================
-canada.json.dagcbor            cbrrr    : 0.88 ms (1149.58 MB/s)
-canada.json.dagcbor            libipld  : 1.00 ms (1004.89 MB/s)
-canada.json.dagcbor            dag_cbor : 228.99 ms (4.40 MB/s)
-citm_catalog.json.dagcbor      cbrrr    : 1.36 ms (240.80 MB/s)
-citm_catalog.json.dagcbor      libipld  : 1.41 ms (231.18 MB/s)
-citm_catalog.json.dagcbor      dag_cbor : 64.53 ms (5.06 MB/s)
-twitter.json.dagcbor           cbrrr    : 0.62 ms (614.70 MB/s)
-twitter.json.dagcbor           libipld  : 0.54 ms (715.02 MB/s)
-twitter.json.dagcbor           dag_cbor : 24.20 ms (15.88 MB/s)
+canada.json.dagcbor            cbrrr    : 0.80 ms (1259.39 MB/s)
+canada.json.dagcbor            libipld  : 2.62 ms (383.93 MB/s)
+canada.json.dagcbor            dag_cbor : 208.59 ms (4.83 MB/s)
+citm_catalog.json.dagcbor      cbrrr    : 1.31 ms (248.68 MB/s)
+citm_catalog.json.dagcbor      libipld  : 1.61 ms (202.47 MB/s)
+citm_catalog.json.dagcbor      dag_cbor : 59.15 ms (5.52 MB/s)
+twitter.json.dagcbor           cbrrr    : 0.61 ms (626.25 MB/s)
+twitter.json.dagcbor           libipld  : 0.63 ms (612.57 MB/s)
+twitter.json.dagcbor           dag_cbor : 22.95 ms (16.74 MB/s)
 
 Decode Torture Tests:
 =====================
-torture_cids.dagcbor           cbrrr     30.8 ms (126.83 MB/s)
-torture_cids.dagcbor           libipld   19.4 ms (201.47 MB/s)
-torture_cids.dagcbor           dag_cbor  7174.4 ms (0.55 MB/s)
-torture_encode_quadratic_buffer_copy.dagcbor cbrrr     3.6 ms (266.22 MB/s)
-torture_encode_quadratic_buffer_copy.dagcbor libipld   2.6 ms (363.33 MB/s)
-torture_encode_quadratic_buffer_copy.dagcbor dag_cbor  7.9 ms (120.20 MB/s)
-torture_nested_lists.dagcbor   cbrrr     812.9 ms (11.73 MB/s)
-torture_nested_lists.dagcbor   libipld   SEGFAULT
+torture_cids.dagcbor           cbrrr     30.4 ms (128.43 MB/s)
+torture_cids.dagcbor           libipld   20.4 ms (191.30 MB/s)
+torture_cids.dagcbor           dag_cbor  6988.5 ms (0.56 MB/s)
+torture_nested_lists.dagcbor   cbrrr     747.4 ms (12.76 MB/s)
+torture_nested_lists.dagcbor   libipld   ERROR: RecursionError: maximum recursion depth exceeded in DAG-CBOR decoding
 torture_nested_lists.dagcbor   dag_cbor  ERROR: maximum recursion depth exceeded
-torture_nested_maps.dagcbor    cbrrr     1328.3 ms (14.36 MB/s)
-torture_nested_maps.dagcbor    libipld   SEGFAULT
+torture_nested_maps.dagcbor    cbrrr     1207.0 ms (15.80 MB/s)
+torture_nested_maps.dagcbor    libipld   ERROR: RecursionError: maximum recursion depth exceeded in DAG-CBOR decoding
 torture_nested_maps.dagcbor    dag_cbor  ERROR: maximum recursion depth exceeded
 ```
 
